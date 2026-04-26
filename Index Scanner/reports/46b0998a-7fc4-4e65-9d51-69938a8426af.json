@@ -1,0 +1,195 @@
+{
+  "base_url": "https://pokie7no-depositbonus.com/",
+  "pages_scanned": 1,
+  "files_scanned": 30,
+  "scripts_scanned": 29,
+  "links_checked": 1,
+  "threats_found": 2,
+  "severity_counts": {
+    "critical": 1,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "threat_types": {
+    "Suspicious Link Keyword": 1,
+    "Malicious Script": 1
+  },
+  "threats": [
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://pokie7no-depositbonus.com/",
+      "line": 1,
+      "description": "URL contains suspicious keyword: 'bonus'",
+      "evidence": "https://pokie7no-depositbonus.com/"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "critical",
+      "file": "https://pokie7no-depositbonus.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "line": 1,
+      "description": "ActiveX exploitation",
+      "evidence": "!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undefined\"!=typeof global?global:\"undefined\"!=typeof self?self:{};function e(t){var e={exports:{}};return"
+    }
+  ],
+  "crawl_errors": [],
+  "files": [
+    {
+      "url": "https://pokie7no-depositbonus.com/",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/4570-809cf8c11f3763da.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/main-app-d3702dd986dd8179.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/5662-f5dc5344d4cc052e.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/1103-17c67b808af7661c.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/9446-ab572c7536e5f1b8.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/4bd1b696-43785ce07ddd7a71.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/1684-a93919a01baad09b.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/7034-2602cdd5ca26da5a.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/app/%5Blang%5D/page-d6c14eefb8b24dab.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/app/%5Blang%5D/layout-a3090bd5ac9f8cb5.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/webpack-ddfd6e18596d3029.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/4458-0b8445956ad08988.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "type": "application/javascript; charset=UTF-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-5",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-6",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-7",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-8",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-9",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-10",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-11",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-12",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-13",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-14",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-15",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://pokie7no-depositbonus.com/#inline-script-16",
+      "type": "text/javascript",
+      "source": "inline"
+    }
+  ],
+  "risk_score": {
+    "score": 0,
+    "verdict": "Clean",
+    "breakdown": {},
+    "max_score": 100
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "base_url": "https://httpbin.org",
+  "pages_scanned": 2,
+  "files_scanned": 6,
+  "scripts_scanned": 4,
+  "links_checked": 5,
+  "threats_found": 3,
+  "severity_counts": {
+    "critical": 0,
+    "high": 3,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {
+    "Brand Impersonation": 3
+  },
+  "threats": [
+    {
+      "type": "Brand Impersonation",
+      "severity": "high",
+      "file": "https://httpbin.org",
+      "line": 13,
+      "description": "Page mentions 'ing' but domain is not affiliated. Possible phishing.",
+      "evidence": "box-sizing: border-box;"
+    },
+    {
+      "type": "Brand Impersonation",
+      "severity": "high",
+      "file": "https://httpbin.org",
+      "line": 107,
+      "description": "Page mentions 'target' but domain is not affiliated. Possible phishing.",
+      "evidence": "<a href=\"https://kennethreitz.org\" target=\"_blank\">the developer - Website</a>"
+    },
+    {
+      "type": "Brand Impersonation",
+      "severity": "high",
+      "file": "https://httpbin.org/forms/post",
+      "line": 6,
+      "description": "Page mentions 'ing' but domain is not affiliated. Possible phishing.",
+      "evidence": "<!-- Example form from HTML5 spec http://www.w3.org/TR/html5/forms.html#writing-a-form's-user-interface -->"
+    }
+  ],
+  "crawl_errors": [
+    {
+      "url": "mailto:me@kennethreitz.org",
+      "error": "Request error: No connection adapters were found for 'mailto:me@kennethreitz.org'"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://httpbin.org",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/swagger-ui-bundle.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/lib/jquery.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://httpbin.org/forms/post",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    }
+  ]
+}

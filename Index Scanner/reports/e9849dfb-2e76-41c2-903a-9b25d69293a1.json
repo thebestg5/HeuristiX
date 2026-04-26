@@ -1,0 +1,425 @@
+{
+  "base_url": "https://suiteappss-trezer.wixstudio.com/us-en",
+  "pages_scanned": 1,
+  "files_scanned": 49,
+  "scripts_scanned": 48,
+  "links_checked": 4,
+  "threats_found": 16,
+  "severity_counts": {
+    "critical": 6,
+    "high": 7,
+    "medium": 3,
+    "low": 0
+  },
+  "threat_types": {
+    "Malicious Script": 9,
+    "External Payload": 2,
+    "Sensitive Data Leak": 5
+  },
+  "threats": [
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 35,
+      "description": "Dynamic script injection",
+      "evidence": "var script = document.createElement('script');"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 37,
+      "description": "Script DOM injection",
+      "evidence": "document.head.appendChild(script);"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 310,
+      "description": "Dynamic script injection",
+      "evidence": "<script data-url=\"https://static.parastorage.com/services/wix-thunderbolt/dist/webpack-runtime.5b4e16b4.bundle.min.js\">(()=>{\"use strict\";var e,r,o,a,t,c,n,i={},d={};function f(e){var r=d[e];if(void 0"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "medium",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 314,
+      "description": "Unicode escaped characters",
+      "evidence": "<script data-url=\"https://static.parastorage.com/services/wix-thunderbolt/dist/custom-element-utils.inline.dfd062cc.bundle.min.js\">\"use strict\";(self.webpackJsonp__wix_thunderbolt_app=self.webpackJson"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 331,
+      "description": "Script DOM injection",
+      "evidence": "(function(c,t,u,n,p,l,y,z,v){if(c[l] && c[l].mute) {return;}function e(b){if(!w){w=!0;var d=t.getElementsByTagName(u)[0],a=t.createElement(u);a.src=z;a.crossorigin=\"anonymous\";a.addEventListener(\"load"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "medium",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 393,
+      "description": "Unicode escaped characters",
+      "evidence": "<script data-url=\"https://static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.f636c49b.bundle.min.js\">\"use strict\";(self.webpackJsonp__wix_thunderbolt_app=self.webpackJsonp__wix_thunderbolt"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "medium",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 395,
+      "description": "Unicode escaped characters",
+      "evidence": "<script data-url=\"https://static.parastorage.com/services/wix-thunderbolt/dist/sendBeat12.inline.b6bc7452.bundle.min.js\">\"use strict\";(self.webpackJsonp__wix_thunderbolt_app=self.webpackJsonp__wix_thu"
+    },
+    {
+      "type": "External Payload",
+      "severity": "critical",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 323,
+      "description": "Link to executable file on external domain: parastorage.com",
+      "evidence": "https://siteassets.parastorage.com/pages/pages/thunderbolt?beckyExperiments=.EnableCustomCSSVarsForLoginSocialBar%2C.LoginBarEnableLoggingInStateInSSR"
+    },
+    {
+      "type": "External Payload",
+      "severity": "critical",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "line": 326,
+      "description": "Link to executable file on external domain: parastorage.com",
+      "evidence": "https://siteassets.parastorage.com/pages/pages/thunderbolt?beckyExperiments=.EnableCustomCSSVarsForLoginSocialBar%2C.LoginBarEnableLoggingInStateInSSR"
+    },
+    {
+      "type": "Sensitive Data Leak",
+      "severity": "critical",
+      "file": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.b6ac6398.bundle.min.js",
+      "line": 1,
+      "description": "Hardcoded password reference",
+      "evidence": "\"use strict\";(self.webpackJsonp__wix_thunderbolt_app=self.webpackJsonp__wix_thunderbolt_app||[]).push([[\"6948\"],{37669(e,t,r){r.d(t,{D:()=>o,T:()=>n})"
+    },
+    {
+      "type": "Sensitive Data Leak",
+      "severity": "high",
+      "file": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.b6ac6398.bundle.min.js",
+      "line": 3,
+      "description": "Hardcoded authentication token",
+      "evidence": "linear-gradient(45deg, #bebebe99 25%, transparent 25%, transparent 75%, #bebebe99 75%, #bebebe99)`,\"pointer-events\":\"none\"},l={position:\"inherit\",top:"
+    },
+    {
+      "type": "Sensitive Data Leak",
+      "severity": "critical",
+      "file": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+      "line": 231,
+      "description": "Hardcoded password reference",
+      "evidence": "window&&!Oc,Ug=Ia&&(!Ge||Oc&&8<Oc&&11>=Oc),Tg=String.fromCharCode(32),Sg=!1,Hb=!1,Kj={color:!0,date:!0,datetime:!0,\"datetime-local\":!0,email:!0,month:"
+    },
+    {
+      "type": "Sensitive Data Leak",
+      "severity": "critical",
+      "file": "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+      "line": 12,
+      "description": "Hardcoded password reference",
+      "evidence": "this),r=a(t.length);return 0==r?0:r-1}}),o(\"lastIndex\"))},function(t,r,n){var e=n(5),o=n(79),i=n(46),a=n(38),u=n(19).f;!e||\"lastItem\"in[]||(u(Array.pr"
+    },
+    {
+      "type": "Sensitive Data Leak",
+      "severity": "critical",
+      "file": "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+      "line": 13,
+      "description": "Hardcoded password reference",
+      "evidence": "type:\"URL\"});if(o!==kt)if(o instanceof yt)r=A(o);else if(n=GLa(r={},String(o)))throw TypeError(n);if(n=GLa(a,i,null,r))throw TypeError(n);var u=a.sear"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-1",
+      "line": 4,
+      "description": "Dynamic script injection",
+      "evidence": "var script = document.createElement('script');"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "high",
+      "file": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-1",
+      "line": 6,
+      "description": "Script DOM injection",
+      "evidence": "document.head.appendChild(script);"
+    }
+  ],
+  "crawl_errors": [],
+  "files": [
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://static.parastorage.com/unpkg/lodash@4.17.21/lodash.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.b6ac6398.bundle.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.99fa8096.bundle.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.a5b51f31.bundle.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://static.parastorage.com/services/tag-manager-client/1.1028.0/siteTags.bundle.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-5",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-6",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-7",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-8",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-9",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-10",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-11",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-12",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-13",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-14",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-15",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-16",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-17",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-18",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-19",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-20",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-21",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-22",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-23",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-24",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-25",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-26",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-27",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-28",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-29",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-30",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-31",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-32",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-33",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-34",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-35",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-36",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-37",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-38",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://suiteappss-trezer.wixstudio.com/us-en#inline-script-39",
+      "type": "text/javascript",
+      "source": "inline"
+    }
+  ],
+  "all_links": [
+    "https://suiteappss-trezer.wixstudio.com/us-en",
+    "https://wix.com/studio",
+    "https://www.wix.com/studio"
+  ],
+  "risk_score": {
+    "score": 0,
+    "verdict": "Dangerous Phishing Site",
+    "breakdown": {
+      "known_malware": {
+        "counts": {
+          "high": 6,
+          "medium": 3
+        },
+        "multiplier": 1.5,
+        "points": -112
+      },
+      "other": {
+        "counts": {
+          "critical": 6,
+          "high": 1
+        },
+        "multiplier": 1.0,
+        "points": -100
+      }
+    },
+    "max_score": 100
+  }
+}

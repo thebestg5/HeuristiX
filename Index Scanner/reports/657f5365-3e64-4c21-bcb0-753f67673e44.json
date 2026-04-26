@@ -1,0 +1,23 @@
+{
+  "base_url": "https://credito-de-consumo.club/",
+  "pages_scanned": 0,
+  "files_scanned": 0,
+  "scripts_scanned": 0,
+  "links_checked": 0,
+  "threats_found": 0,
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {},
+  "threats": [],
+  "crawl_errors": [
+    {
+      "url": "https://credito-de-consumo.club/",
+      "error": "Connection error: HTTPSConnectionPool(host='credito-de-consumo.club', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify fai"
+    }
+  ],
+  "files": []
+}
