@@ -1,0 +1,41 @@
+{
+  "base_url": "https://www.patreon.com/posts/primes-hd-beta-145471037",
+  "pages_scanned": 1,
+  "files_scanned": 2,
+  "scripts_scanned": 1,
+  "links_checked": 0,
+  "threats_found": 0,
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {},
+  "threats": [],
+  "crawl_errors": [],
+  "files": [
+    {
+      "url": "https://www.patreon.com/posts/primes-hd-beta-145471037",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://www.patreon.com/posts/primes-hd-beta-145471037#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    }
+  ],
+  "all_links": [],
+  "risk_score": {
+    "score": 100,
+    "verdict": "Safe",
+    "breakdown": {},
+    "max_score": 100,
+    "confidence": {
+      "score": 0,
+      "label": "No behavioral flags detected",
+      "behavioral_flags_triggered": 0
+    }
+  }
+}

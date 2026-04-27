@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index Scanner</title>
+<style>
+:root{--bg:#0b0d12;--surface:#12141c;--card:#161922;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#818cf8;--crit:#ef4444;--high:#f97316;--med:#eab308;--low:#22c55e;--border:#1f2937;}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+header{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
+header h1{margin:0;font-size:1.75rem;background:linear-gradient(90deg,var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header p{margin:0;color:var(--muted);font-size:.9rem}
+.logo{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;margin-bottom:1.5rem}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:.4rem;font-weight:500}
+input[type=text],input[type=number]{width:100%;padding:.65rem .85rem;background:var(--surface);border:1px solid var(--border);border-radius:.5rem;color:var(--text);font-size:.95rem;outline:none}
+input:focus{border-color:var(--accent)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.row{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}}
+button{padding:.65rem 1.25rem;border:none;border-radius:.5rem;font-size:.95rem;font-weight:600;cursor:pointer;transition:transform .1s,opacity .2s}
+button:active{transform:scale(.98)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{opacity:.9}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent)}
+.actions{display:flex;gap:.75rem;margin-top:1rem}
+.progress{display:none;margin-top:1rem}
+.progress.active{display:block}
+.progress-bar{height:6px;background:var(--surface);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .5s}
+.status-text{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1rem;text-align:center}
+.stat-card .number{font-size:1.75rem;font-weight:700;margin-bottom:.2rem}
+.stat-card .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.crit{color:var(--crit)}.high{color:var(--high)}.med{color:var(--med)}.low{color:var(--low)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th,td{padding:.65rem .75rem;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em}
+tr:hover{background:rgba(255,255,255,.02)}
+.badge{display:inline-block;padding:.2rem .45rem;border-radius:.3rem;font-size:.7rem;font-weight:700;color:#fff}
+.badge-crit{background:var(--crit)}.badge-high{background:var(--high)}.badge-med{background:var(--med);color:#000}.badge-low{background:var(--low)}
+.mono{font-family:'Fira Code',Consolas,monospace;font-size:.8rem;word-break:break-all}
+.hidden{display:none}
+.section-title{font-size:1.1rem;font-weight:600;margin-bottom:.75rem;display:flex;align-items:center;justify-content:space-between}
+.scan-list{max-height:220px;overflow-y:auto;border:1px solid var(--border);border-radius:.5rem;background:var(--surface)}
+.scan-item{padding:.6rem .85rem;border-bottom:1px solid var(--border);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.scan-item:hover{background:rgba(255,255,255,.03)}
+.scan-item:last-child{border-bottom:none}
+.scan-status{font-size:.75rem;padding:.15rem .4rem;border-radius:.25rem}
+.status-completed{background:rgba(34,197,94,.15);color:var(--low)}
+.status-running{background:rgba(56,189,248,.15);color:var(--accent)}
+.status-queued{background:rgba(148,163,184,.15);color:var(--muted)}
+.status-failed{background:rgba(239,68,68,.15);color:var(--crit)}
+.empty-state{text-align:center;padding:2rem;color:var(--muted)}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:.85rem 1.25rem;box-shadow:0 10px 30px rgba(0,0,0,.4);display:none;z-index:100;max-width:320px}
+.toast.show{display:block}
+.toast-title{font-weight:600;margin-bottom:.25rem}
+.toast-msg{font-size:.85rem;color:var(--muted)}
+.dl-btn{display:inline-block;padding:.15rem .4rem;border-radius:.25rem;font-size:.7rem;font-weight:600;cursor:pointer;border:1px solid var(--accent);color:var(--accent);background:transparent;text-decoration:none}
+.dl-btn:hover{background:var(--accent);color:#fff}
+.links-list{max-height:300px;overflow-y:auto;border:1px solid var(--border);border-radius:.5rem;background:var(--surface)}
+.link-item{padding:.4rem .75rem;border-bottom:1px solid var(--border);font-size:.8rem;word-break:break-all}
+.link-item:last-child{border-bottom:none}
+.link-item a{color:var(--accent);text-decoration:none}
+.link-item a:hover{text-decoration:underline}
+.tab-bar{display:flex;gap:.5rem;margin-bottom:1rem}
+.tab-btn{padding:.4rem .85rem;border:1px solid var(--border);border-radius:.5rem;background:var(--surface);color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer}
+.tab-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.08)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.info-btn{position:fixed;bottom:1.5rem;right:1.5rem;width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:1.1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;transition:border-color .2s,color .2s}
+.info-btn:hover{border-color:var(--accent);color:var(--accent)}
+.info-panel{position:fixed;bottom:4.5rem;right:1.5rem;width:380px;max-height:80vh;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:90;display:none}
+.info-panel.show{display:block}
+.info-panel h3{margin:0 0 .75rem;font-size:1rem;color:var(--accent)}
+.info-panel h4{margin:.75rem 0 .35rem;font-size:.85rem;color:var(--text)}
+.info-panel p,.info-panel li{font-size:.8rem;color:var(--muted);line-height:1.6}
+.info-panel ul{margin:.25rem 0 .5rem;padding-left:1.1rem}
+.info-panel .color-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="container">
+<header><div class="logo">🛡️</div><div><h1>HeuristiX</h1><p>Detects malware, malicious scripts, phishing & scam links.</p></div></header>
+
+<div class="card">
+  <label>Target URL</label>
+  <input type="text" id="url" placeholder="https://example.com">
+  <div class="row" style="margin-top:.75rem">
+    <div><label>Max Pages</label><input type="number" id="maxPages" value="30" min="1" max="200"></div>
+    <div><label>Crawl Depth</label><input type="number" id="maxDepth" value="2" min="1" max="5"></div>
+  </div>
+  <div style="margin-top:.75rem;display:flex;align-items:center;gap:.5rem">
+    <input type="checkbox" id="stealthMode" style="width:16px;height:16px;cursor:pointer">
+    <label for="stealthMode" style="font-size:.85rem;color:var(--muted);cursor:pointer">Stealth Mode (hide from site detection)</label>
+  </div>
+  <div class="actions">
+    <button class="btn-primary" onclick="startScan()">Start Scan</button>
+    <button class="btn-secondary" onclick="loadRecent()">Refresh History</button>
+  </div>
+  <div class="progress" id="progArea">
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    <div class="status-text" id="statusText">Initializing...</div>
+  </div>
+</div>
+
+<div class="card" id="resultArea">
+  <div class="section-title"><span>Results</span><div id="reportActions" class="hidden">
+    <button class="btn-secondary" onclick="dl('json')">JSON</button>
+    <button class="btn-secondary" onclick="dl('html')" style="margin-left:.4rem">HTML</button>
+  </div></div>
+  <div class="stats-grid" id="statsGrid"></div>
+  <div id="threatsSection" class="hidden">
+    <div class="section-title" style="margin-top:1.5rem">Threats</div>
+    <div style="overflow-x:auto"><table><thead><tr><th>Sev</th><th>Type</th><th>File</th><th>Line</th><th>Description</th></tr></thead><tbody id="threatsTable"></tbody></table></div>
+  </div>
+  <div id="errorsSection" class="hidden">
+    <div class="section-title" style="margin-top:1.5rem">Crawl Errors</div>
+    <div style="overflow-x:auto"><table><thead><tr><th>URL</th><th>Error</th></tr></thead><tbody id="errorsTable"></tbody></table></div>
+  </div>
+  <div class="tab-bar" style="margin-top:1.5rem" id="detailTabs">
+    <button class="tab-btn active" onclick="showTab('files')">Discovered Files</button>
+    <button class="tab-btn" onclick="showTab('links')">Discovered Links</button>
+  </div>
+  <div id="filesTab" class="tab-content active">
+    <div style="overflow-x:auto"><table><thead><tr><th>File / URL</th><th>Type</th><th>Source</th><th>Download</th></tr></thead><tbody id="filesTable"></tbody></table></div>
+  </div>
+  <div id="linksTab" class="tab-content">
+    <div style="margin-bottom:.5rem;font-size:.85rem;color:var(--muted)" id="linksCount"></div>
+    <div class="links-list" id="linksList"></div>
+  </div>
+  <div id="emptyResult" class="empty-state">No scan results yet.</div>
+</div>
+
+<div class="card">
+  <div class="section-title">Dangerous Sites Reported Recently</div>
+  <div class="scan-list" id="dangerousList"><div class="empty-state">No dangerous sites detected yet.</div></div>
+</div>
+
+<div class="card">
+  <div class="section-title">Scan History</div>
+  <div class="scan-list" id="scanList"><div class="empty-state">No scans yet.</div></div>
+</div>
+</div>
+
+<button class="info-btn" id="infoBtn" onclick="toggleInfo()" title="What does everything mean?">?</button>
+<div class="info-panel" id="infoPanel">
+  <h3>HeuristiX Guide</h3>
+  <h4>What does this tool do?</h4>
+  <p>HeuristiX crawls a website and detects <b>malware</b>, <b>malicious scripts</b>, <b>phishing pages</b>, <b>brand impersonation</b>, <b>suspicious links</b>, <b>obfuscated code</b>, and <b>credential harvesting forms</b>. It is not limited to phishing — it finds any kind of threat on a site.</p>
+  <h4>Risk Score (0–100)</h4>
+  <ul>
+    <li><span class="color-dot" style="background:#22c55e"></span><b style="color:#22c55e">Green (71–100)</b> — Site is safe. No or very few threats found.</li>
+    <li><span class="color-dot" style="background:#eab308"></span><b style="color:#eab308">Yellow (51–70)</b> — Moderate risk. Some suspicious indicators detected.</li>
+    <li><span class="color-dot" style="background:#ef4444"></span><b style="color:#ef4444">Red (0–50)</b> — Dangerous. Many threats found. Do not trust this site.</li>
+  </ul>
+  <h4>Threat Severity Levels</h4>
+  <ul>
+    <li><span class="badge badge-crit">CRITICAL</span> — Known malware or active exploitation. Immediate danger.</li>
+    <li><span class="badge badge-high">HIGH</span> — Strong phishing, brand impersonation, or credential harvesting.</li>
+    <li><span class="badge badge-med" style="color:#000">MEDIUM</span> — Suspicious patterns, unusual TLDs, or multiple scam keywords.</li>
+    <li><span class="badge badge-low">LOW</span> — Minor indicators, low-confidence signals.</li>
+  </ul>
+  <h4>Discovered Files</h4>
+  <p>Every file the crawler finds (HTML pages, external scripts, inline scripts) is listed with a <b>Download</b> button so you can inspect the raw source code yourself.</p>
+  <h4>Discovered Links</h4>
+  <p>All links found on the crawled pages are listed. You can click any link to open it in a new tab and verify it manually.</p>
+  <h4>Source Types</h4>
+  <ul>
+    <li><span class="badge badge-low">page</span> — An HTML page crawled from the target site.</li>
+    <li><span class="badge badge-med" style="color:#000">external_script</span> — A JavaScript file loaded from an external URL.</li>
+    <li><span class="badge badge-high">inline</span> — Inline JavaScript embedded directly in a page.</li>
+  </ul>
+</div>
+<div class="toast" id="toast"><div class="toast-title" id="tTitle">Note</div><div class="toast-msg" id="tMsg">Message</div></div>
+
+<script>
+let sid=null, poll=null;
+
+function showToast(t,m){const el=document.getElementById('toast'),tt=document.getElementById('tTitle'),tm=document.getElementById('tMsg');tt.textContent=t;tm.textContent=m;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3500);}
+
+function toggleInfo(){document.getElementById('infoPanel').classList.toggle('show');}
+// Close info panel when clicking outside
+document.addEventListener('click',function(e){const panel=document.getElementById('infoPanel'),btn=document.getElementById('infoBtn');if(!panel.contains(e.target)&&e.target!==btn)panel.classList.remove('show');});
+
+async function startScan(){
+  const url=document.getElementById('url').value.trim();
+  if(!url){showToast('Error','Enter a URL');return;}
+  const mp=parseInt(document.getElementById('maxPages').value,10)||30;
+  const md=parseInt(document.getElementById('maxDepth').value,10)||2;
+  const sm=document.getElementById('stealthMode').checked;
+  document.getElementById('progArea').classList.add('active');
+  document.getElementById('progFill').style.width='10%';
+  document.getElementById('statusText').textContent='Sending request...';
+  try{
+    const r=await fetch('/api/scan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,max_pages:mp,max_depth:md,stealth_mode:sm})});
+    const d=await r.json(); if(d.error) throw new Error(d.error);
+    sid=d.scan_id;
+    document.getElementById('progFill').style.width='25%';
+    document.getElementById('statusText').textContent='Queued, waiting...';
+    pollStatus(sid);
+  }catch(e){document.getElementById('progArea').classList.remove('active');showToast('Failed',e.message);}
+}
+
+function pollStatus(id){
+  if(poll) clearInterval(poll);
+  poll=setInterval(async()=>{
+    try{
+      const r=await fetch('/api/scan/'+id+'/status');
+      const d=await r.json(); const st=d.status;
+      if(st==='running'){document.getElementById('progFill').style.width='60%';document.getElementById('statusText').textContent='Scanning & analyzing...';}
+      else if(st==='completed'){clearInterval(poll);document.getElementById('progFill').style.width='100%';document.getElementById('statusText').textContent='Done!';showToast('Success','Scan completed');loadResult(id);loadRecent();setTimeout(()=>document.getElementById('progArea').classList.remove('active'),2000);}
+      else if(st==='failed'){clearInterval(poll);document.getElementById('progArea').classList.remove('active');showToast('Failed',d.error||'Error');loadRecent();}
+    }catch(e){clearInterval(poll);document.getElementById('progArea').classList.remove('active');}
+  },1500);
+}
+
+async function loadResult(id){
+  sid=id;
+  try{
+    const r=await fetch('/api/scan/'+id+'/result');
+    if(!r.ok) throw new Error('Not ready');
+    const d=await r.json(); render(d);
+    document.getElementById('reportActions').classList.remove('hidden');
+  }catch(e){showToast('Error',e.message);}
+}
+
+function render(data){
+  document.getElementById('emptyResult').classList.add('hidden');
+  const rs=data.risk_score||{};
+  const score=rs.score||0;
+  const verdict=rs.verdict||'';
+  const sc=score>70?'low':score>50?'med':'crit';
+  const scolor=score>70?'#22c55e':score>50?'#eab308':'#ef4444';
+  
+  // HeuristiX Confidence Score
+  const conf=rs.confidence||{};
+  const confScore=conf.score||0;
+  const confLabel=conf.label||'';
+  const confColor=confScore>=85?'#ef4444':confScore>=60?'#f97316':confScore>=40?'#eab308':'#22c55e';
+
+  // Verdict banner for bad scores (≤50)
+  let banner='';
+  if(score<=50){
+    banner=`<div style="background:${scolor}15;border:1px solid ${scolor};border-radius:.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:2.2rem;font-weight:800;color:${scolor};">${score}/100</div>
+      <div style="min-width:0;flex:1;"><div style="font-size:1.1rem;font-weight:700;color:${scolor};word-break:break-word;">${verdict}</div><div style="font-size:.8rem;color:var(--muted);">Risk Score</div></div>
+    </div>`;
+  }
+
+  const s=data.severity_counts||{};
+  const stats=[{n:score+'/100',l:'Score',c:sc},{n:s.critical||0,l:'Critical',c:'crit'},{n:s.high||0,l:'High',c:'high'},{n:s.medium||0,l:'Medium',c:'med'},{n:s.low||0,l:'Low',c:'low'},{n:data.pages_scanned||0,l:'Pages',c:''},{n:data.files_scanned||0,l:'Files',c:''},{n:data.links_checked||0,l:'Links',c:''}];
+  document.getElementById('statsGrid').innerHTML=banner+stats.map(x=>`<div class="stat-card"><div class="number ${x.c}">${x.n}</div><div class="label">${x.l}</div></div>`).join('');
+  
+  // Add Confidence Score display if available
+  if(confScore>0){
+    const confDiv=document.createElement('div');
+    confDiv.style.cssText='margin-top:1rem;padding:.75rem 1rem;background:var(--surface);border-radius:.5rem;border:1px solid var(--border);font-size:.85rem';
+    confDiv.innerHTML=`<div style="color:var(--muted);margin-bottom:.25rem">HeuristiX Confidence Score</div><div style="display:flex;align-items:center;gap:.5rem"><span style="font-size:1.2rem;font-weight:700;color:${confColor}">${confScore}%</span><span style="color:${confColor};font-weight:600">${confLabel}</span></div>`;
+    document.getElementById('statsGrid').appendChild(confDiv);
+  }
+
+  const threats=data.threats||[];
+  const tbody=document.getElementById('threatsTable');
+  if(threats.length){document.getElementById('threatsSection').classList.remove('hidden');tbody.innerHTML=threats.map(t=>{
+    let b='badge-low';if(t.severity==='critical')b='badge-crit';else if(t.severity==='high')b='badge-high';else if(t.severity==='medium')b='badge-med';
+    return `<tr><td><span class="badge ${b}">${t.severity.toUpperCase()}</span></td><td>${esc(t.type)}</td><td class="mono">${esc(t.file)}</td><td>${t.line||0}</td><td>${esc(t.description)}</td></tr>`;
+  }).join('');}else{document.getElementById('threatsSection').classList.add('hidden');}
+
+  const errors=data.crawl_errors||[];
+  const etbody=document.getElementById('errorsTable');
+  if(errors.length){document.getElementById('errorsSection').classList.remove('hidden');etbody.innerHTML=errors.map(e=>`<tr><td class="mono">${esc(e.url)}</td><td>${esc(e.error)}</td></tr>`).join('');}else{document.getElementById('errorsSection').classList.add('hidden');}
+
+  // Discovered Files table with download buttons
+  const files=data.files||[];
+  const ftbody=document.getElementById('filesTable');
+  if(files.length){ftbody.innerHTML=files.map(f=>{
+    const dlUrl='/api/scan/'+sid+'/file/'+encodeURIComponent(f.url);
+    const src=f.source||'page';
+    const srcBadge=src==='page'?'badge-low':src==='external_script'?'badge-med':'badge-high';
+    return `<tr><td class="mono">${esc(f.url)}</td><td>${esc(f.type||'unknown')}</td><td><span class="badge ${srcBadge}">${esc(src)}</span></td><td><a class="dl-btn" href="${dlUrl}" target="_blank">Download</a></td></tr>`;
+  }).join('');}
+
+  // Discovered Links list
+  const links=data.all_links||[];
+  document.getElementById('linksCount').textContent=links.length+' link'+(links.length!==1?'s':'')+' discovered during crawl';
+  document.getElementById('linksList').innerHTML=links.map(l=>`<div class="link-item"><a href="${esc(l)}" target="_blank" rel="noopener">${esc(l)}</a></div>`).join('')||'<div class="empty-state">No links found.</div>';
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function showTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(name+'Tab').classList.add('active');
+  event.target.classList.add('active');
+}
+
+function dl(fmt){if(!sid)return;window.open('/api/scan/'+sid+'/report/'+fmt,'_blank');}
+
+async function loadRecent(){
+  try{
+    const r=await fetch('/api/scans');
+    const d=await r.json();
+    const list=document.getElementById('scanList');
+    if(!d.scans||!d.scans.length){list.innerHTML='<div class="empty-state">No scans yet.</div>';return;}
+    list.innerHTML=d.scans.map(s=>{
+      let cls='status-queued';if(s.status==='completed')cls='status-completed';else if(s.status==='running')cls='status-running';else if(s.status==='failed')cls='status-failed';
+      return `<div class="scan-item" onclick="loadResult('${s.scan_id}')"><div><div class="mono" style="font-size:.8rem">${esc(s.url)}</div><div style="font-size:.7rem;color:var(--muted)">${esc(s.started_at||'')}</div></div><span class="scan-status ${cls}">${s.status}</span></div>`;
+    }).join('');
+    
+    // Populate dangerous sites list (score <= 50)
+    const dangerous=d.scans.filter(s=>s.status==='completed'&&s.result&&s.result.risk_score&&s.result.risk_score.score<=50);
+    const dangerousList=document.getElementById('dangerousList');
+    if(!dangerous.length){dangerousList.innerHTML='<div class="empty-state">No dangerous sites detected yet.</div>';}
+    else{
+      dangerousList.innerHTML=dangerous.map(s=>{
+        const score=s.result.risk_score.score;
+        const verdict=s.result.risk_score.verdict;
+        const threats=s.result.threats||[];
+        const topThreat=threats[0]||{type:'Unknown',severity:'unknown'};
+        const threatColor=topThreat.severity==='critical'?'#ef4444':topThreat.severity==='high'?'#f97316':topThreat.severity==='medium'?'#eab308':'#22c55e';
+        return `<div class="scan-item" onclick="loadResult('${s.scan_id}')">
+          <div>
+            <div class="mono" style="font-size:.8rem">${esc(s.url)}</div>
+            <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">
+              <span style="color:${score<=25?'#ef4444':score<=50?'#f97316':'#22c55e'};font-weight:700">${score}/100</span> • ${esc(verdict)}
+            </div>
+            <div style="font-size:.7rem;color:var(--muted);margin-top:.15rem">
+              <span style="color:${threatColor}">${esc(topThreat.type)}</span> ${threats.length>1?`+${threats.length-1} more`:''}
+            </div>
+          </div>
+          <span class="scan-status status-failed">DANGEROUS</span>
+        </div>`;
+      }).join('');
+    }
+  }catch(e){showToast('Error',e.message);}
+}
+
+loadRecent();
+</script>
+</body>
+</html>

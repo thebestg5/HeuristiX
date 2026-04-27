@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  heuristix:
+    build: .
+    container_name: heuristix-scanner
+    ports:
+      - "5000:5000"
+    volumes:
+      # Persist scan reports on host (optional - remove if you want fully ephemeral scans)
+      - ./reports:/app/reports
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+    restart: unless-stopped
+    # Security hardening options
+    security_opt:
+      - no-new-privileges:true
+    # Drop all capabilities except essential ones
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    # Read-only root filesystem (except for reports volume)
+    read_only: true
+    tmpfs:
+      - /tmp
+    # Resource limits to prevent container abuse
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    networks:
+      - heuristix-net
+
+networks:
+  heuristix-net:
+    driver: bridge
