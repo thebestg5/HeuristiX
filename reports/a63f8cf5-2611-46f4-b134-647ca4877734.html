@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --card: #161922;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --critical: #ef4444;
+            --high: #f97316;
+            --medium: #eab308;
+            --low: #22c55e;
+            --border: #1f2937;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+        h1, h2, h3 { margin-top: 0; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 2rem; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .card .number { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .card .label { color: var(--muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .number.critical { color: var(--critical); }
+        .number.high { color: var(--high); }
+        .number.medium { color: var(--medium); }
+        .number.low { color: var(--low); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: rgba(255,255,255,0.03); color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+        .badge.critical { background: var(--critical); }
+        .badge.high { background: var(--high); }
+        .badge.medium { background: var(--medium); color: #000; }
+        .badge.low { background: var(--low); }
+        .mono { font-family: 'Fira Code', Consolas, Monaco, monospace; font-size: 0.8rem; word-break: break-all; }
+        .small { max-width: 300px; }
+        .text-center { text-align: center; color: var(--muted); }
+        .section { margin-bottom: 2.5rem; }
+        .muted { color: var(--muted); }
+        .timestamp { font-size: 0.875rem; color: var(--muted); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🛡️ Index Scanner Report</h1>
+        <p class="muted">Target: <strong>https://en.wikipedia.org/wiki/Password</strong></p>
+        <p class="timestamp">Generated: 2026-04-24 18:17:11</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="number critical">0</div>
+            <div class="label">Critical</div>
+        </div>
+        <div class="card">
+            <div class="number high">1</div>
+            <div class="label">High</div>
+        </div>
+        <div class="card">
+            <div class="number medium">43</div>
+            <div class="label">Medium</div>
+        </div>
+        <div class="card">
+            <div class="number low">0</div>
+            <div class="label">Low</div>
+        </div>
+        <div class="card">
+            <div class="number">30</div>
+            <div class="label">Pages</div>
+        </div>
+        <div class="card">
+            <div class="number">130</div>
+            <div class="label">Files</div>
+        </div>
+        <div class="card">
+            <div class="number">13455</div>
+            <div class="label">Links</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Threats</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Severity</th>
+                    <th>Type</th>
+                    <th>File / URL</th>
+                    <th>Line</th>
+                    <th>Description</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://web.archive.org/web/20120830223146/http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1157</td>
+                    <td>URL contains suspicious keyword: 'support'</td>
+                    <td class="mono small">https://web.archive.org/web/20060509045622/http://support.microsoft.com/default.aspx?scid=KB;EN-US;q299656</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.schneier.com/crypto-gram-0105.html#8</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20111115145148/http://www.schneier.com/crypto-gram-0105.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100718174309/http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100918155208/http://burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1202</td>
+                    <td>URL contains suspicious keyword: 'free'</td>
+                    <td class="mono small">https://www.techradar.com/best/best-free-password-managers</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>1244</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/2012-linkedin-breach-117-million-emails-and-passwords-stolen-not-6-5m</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Malicious Script</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page</td>
+                    <td>973</td>
+                    <td>Unicode escaped characters</td>
+                    <td class="mono small">&lt;script&gt;(RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.main-56dfd6f675-c5r7c&quot;,&quot;wgBackendResponseTime&quot;:185,&quot;wgPageParseReport&quot;:{&quot;limitreport&quot;:{&quot;cputime&quot;:&quot;0.237&quot;,&quot;walltim</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>585</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://www.aljazeera.com/news/2026/4/23/more-than-6-million-somalis-face-hunger-amid-climate-shocks-and-conflict</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>600</td>
+                    <td>URL contains suspicious keyword: 'free'</td>
+                    <td class="mono small">https://www.freemalaysiatoday.com/category/sports/2026/04/24/us-says-irans-players-welcome-at-world-cup-amid-italy-uproar</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>788</td>
+                    <td>URL contains suspicious keyword: 'support'</td>
+                    <td class="mono small">https://www.timesofisrael.com/liveblog_entry/argentinas-milei-awarded-presidential-medal-of-honor-honorary-bar-ilan-doctorate-for-israel-support/</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>798</td>
+                    <td>URL contains suspicious keyword: 'cash'</td>
+                    <td class="mono small">https://www.naharnet.com/stories/319671-france-probes-alleged-illicit-cash-flight-from-lebanon/</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>833</td>
+                    <td>URL contains suspicious keyword: 'free'</td>
+                    <td class="mono small">https://english.ahram.org.eg/NewsContentP/2/566259/World/DR-Congo,-M-armed-group-agree-to-ease-aid,-free-pr.aspx</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Malicious Script</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random</td>
+                    <td>778</td>
+                    <td>Unicode escaped characters</td>
+                    <td class="mono small">&lt;script&gt;(RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.canary-cb4ddd8bb-z4lnf&quot;,&quot;wgBackendResponseTime&quot;:112,&quot;wgKartographerLiveData&quot;:{&quot;_70b8c421fffbf7f36bfe4895ba4a964af</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge high">HIGH</span></td>
+                    <td>URL Obfuscation</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Community_portal</td>
+                    <td>812</td>
+                    <td>URL contains @ (credential trick)</td>
+                    <td class="mono small">https://lists.wikimedia.org/hyperkitty/list/wikitech-l@lists.wikimedia.org/thread/LJYRIS4WB66HIRCAO4GIDTXCMDVZRBMA/</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Malicious Script</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Search</td>
+                    <td>6</td>
+                    <td>Unicode escaped characters</td>
+                    <td class="mono small">&lt;script&gt;(function(){var className=&quot;client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Talk:Password</td>
+                    <td>695</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.schneier.com/crypto-gram-0105.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://web.archive.org/web/20120830223146/http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1157</td>
+                    <td>URL contains suspicious keyword: 'support'</td>
+                    <td class="mono small">https://web.archive.org/web/20060509045622/http://support.microsoft.com/default.aspx?scid=KB;EN-US;q299656</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.schneier.com/crypto-gram-0105.html#8</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20111115145148/http://www.schneier.com/crypto-gram-0105.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100718174309/http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100918155208/http://burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1202</td>
+                    <td>URL contains suspicious keyword: 'free'</td>
+                    <td class="mono small">https://www.techradar.com/best/best-free-password-managers</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>1244</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/2012-linkedin-breach-117-million-emails-and-passwords-stolen-not-6-5m</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1151</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://web.archive.org/web/20120830223146/http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1157</td>
+                    <td>URL contains suspicious keyword: 'support'</td>
+                    <td class="mono small">https://web.archive.org/web/20060509045622/http://support.microsoft.com/default.aspx?scid=KB;EN-US;q299656</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.schneier.com/crypto-gram-0105.html#8</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1183</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20111115145148/http://www.schneier.com/crypto-gram-0105.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1191</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100718174309/http://www.cryptosmith.com/sanity/pwdilemma.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">http://www.burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1194</td>
+                    <td>URL contains suspicious keyword: 'crypto'</td>
+                    <td class="mono small">https://web.archive.org/web/20100918155208/http://burtleburtle.net/bob/crypto/password.html</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1202</td>
+                    <td>URL contains suspicious keyword: 'free'</td>
+                    <td class="mono small">https://www.techradar.com/best/best-free-password-managers</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>Suspicious Link Keyword</td>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>1244</td>
+                    <td>URL contains suspicious keyword: 'million'</td>
+                    <td class="mono small">https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/2012-linkedin-breach-117-million-emails-and-passwords-stolen-not-6-5m</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge medium">MEDIUM</span></td>
+                    <td>URL Obfuscation</td>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)</td>
+                    <td>1345</td>
+                    <td>Hex encoded URL segment</td>
+                    <td class="mono small">https://www.youtube.com/watch?v=AsBvt0X80Ms</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Crawl Errors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Error</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="2" class="text-center">No crawl errors.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Scanned Files</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Content Type</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022</td>
+                    <td>text/javascript; charset=utf-8</td>
+                    <td>external_script</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Main_Page#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contents</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Random#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:About</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contact_us</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Contents</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Contents#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Contents#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Contents#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Introduction</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Introduction#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Introduction#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Help:Introduction#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Community_portal</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChanges</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:SpecialPages</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Search</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Search#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Search#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:Search#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&safemode=1&skin=vector-2022</td>
+                    <td>text/javascript; charset=utf-8</td>
+                    <td>external_script</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Talk:Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Talk:Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Talk:Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Talk:Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=edit</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=edit#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=edit#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=edit#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=history</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=history#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=history#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=history#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:WhatLinksHere/Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:WhatLinksHere/Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:WhatLinksHere/Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:WhatLinksHere/Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Password</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Password#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Password#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Password#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&oldid=1348532018#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=info</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=info#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=info#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&action=info#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Password&id=1348532018&wpFormIdentifier=titleform</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Password&id=1348532018&wpFormIdentifier=titleform#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Password&id=1348532018&wpFormIdentifier=titleform#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Password&id=1348532018&wpFormIdentifier=titleform#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPassword</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPassword#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPassword#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPassword#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Password&action=show-download-screen</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Password&action=show-download-screen#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Password&action=show-download-screen#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Password&action=show-download-screen#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&printable=1&raw=1&skin=vector-2022</td>
+                    <td>text/javascript; charset=utf-8</td>
+                    <td>external_script</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/w/index.php?title=Password&printable=yes#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password_(disambiguation)</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password_(disambiguation)#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password_(disambiguation)#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password_(disambiguation)#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Password_(disambiguation)#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)</td>
+                    <td>text/html; charset=utf-8</td>
+                    <td>page</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)#inline-script-1</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)#inline-script-2</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)#inline-script-3</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono">https://en.wikipedia.org/wiki/Passcode_(group)#inline-script-4</td>
+                    <td>text/javascript</td>
+                    <td>inline</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

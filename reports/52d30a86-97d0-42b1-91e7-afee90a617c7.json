@@ -1,0 +1,44 @@
+{
+  "base_url": "https://www.wikipedia.org",
+  "pages_scanned": 1,
+  "files_scanned": 5,
+  "scripts_scanned": 4,
+  "links_checked": 375,
+  "threats_found": 0,
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {},
+  "threats": [],
+  "crawl_errors": [],
+  "files": [
+    {
+      "url": "https://www.wikipedia.org",
+      "type": "text/html",
+      "source": "page"
+    },
+    {
+      "url": "https://www.wikipedia.org/portal/wikipedia.org/assets/js/index-a9b103e1fc.js",
+      "type": "text/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://www.wikipedia.org/portal/wikipedia.org/assets/js/gt-ie9-507b16b6be.js",
+      "type": "text/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://www.wikipedia.org#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://www.wikipedia.org#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    }
+  ]
+}

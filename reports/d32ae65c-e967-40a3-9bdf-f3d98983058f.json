@@ -1,0 +1,23 @@
+{
+  "base_url": "http://testphp.vulnweb.com",
+  "pages_scanned": 0,
+  "files_scanned": 0,
+  "scripts_scanned": 0,
+  "links_checked": 0,
+  "threats_found": 0,
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {},
+  "threats": [],
+  "crawl_errors": [
+    {
+      "url": "http://testphp.vulnweb.com",
+      "error": "Timeout"
+    }
+  ],
+  "files": []
+}

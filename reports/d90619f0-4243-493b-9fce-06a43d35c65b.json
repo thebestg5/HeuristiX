@@ -1,0 +1,850 @@
+{
+  "base_url": "https://en.wikipedia.org/wiki/Phishing",
+  "pages_scanned": 30,
+  "files_scanned": 130,
+  "scripts_scanned": 100,
+  "links_checked": 16275,
+  "threats_found": 22,
+  "severity_counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 21,
+    "low": 0
+  },
+  "threat_types": {
+    "Suspicious Link Keyword": 19,
+    "Malicious Script": 2,
+    "URL Obfuscation": 1
+  },
+  "threats": [
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Phishing",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Phishing",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20190122062718/http://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Phishing",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Phishing",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20210321122517/https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Main_Page",
+      "line": 973,
+      "description": "Unicode escaped characters",
+      "evidence": "<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({\"wgHostname\":\"mw-web.eqiad.main-56dfd6f675-c5r7c\",\"wgBackendResponseTime\":185,\"wgPageParseReport\":{\"limitreport\":{\"cputime\":\"0.237\",\"walltim"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "line": 585,
+      "description": "URL contains suspicious keyword: 'million'",
+      "evidence": "https://www.aljazeera.com/news/2026/4/23/more-than-6-million-somalis-face-hunger-amid-climate-shocks-and-conflict"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "line": 600,
+      "description": "URL contains suspicious keyword: 'free'",
+      "evidence": "https://www.freemalaysiatoday.com/category/sports/2026/04/24/us-says-irans-players-welcome-at-world-cup-amid-italy-uproar"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "line": 788,
+      "description": "URL contains suspicious keyword: 'support'",
+      "evidence": "https://www.timesofisrael.com/liveblog_entry/argentinas-milei-awarded-presidential-medal-of-honor-honorary-bar-ilan-doctorate-for-israel-support/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "line": 798,
+      "description": "URL contains suspicious keyword: 'cash'",
+      "evidence": "https://www.naharnet.com/stories/319671-france-probes-alleged-illicit-cash-flight-from-lebanon/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "line": 833,
+      "description": "URL contains suspicious keyword: 'free'",
+      "evidence": "https://english.ahram.org.eg/NewsContentP/2/566259/World/DR-Congo,-M-armed-group-agree-to-ease-aid,-free-pr.aspx"
+    },
+    {
+      "type": "URL Obfuscation",
+      "severity": "high",
+      "file": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal",
+      "line": 812,
+      "description": "URL contains @ (credential trick)",
+      "evidence": "https://lists.wikimedia.org/hyperkitty/list/wikitech-l@lists.wikimedia.org/thread/LJYRIS4WB66HIRCAO4GIDTXCMDVZRBMA/"
+    },
+    {
+      "type": "Malicious Script",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Special:Search",
+      "line": 6,
+      "description": "Unicode escaped characters",
+      "evidence": "<script>(function(){var className=\"client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20190122062718/http://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20210321122517/https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes",
+      "line": 1225,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20190122062718/http://financialcryptography.com/mt/archives/000609.html"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes",
+      "line": 1289,
+      "description": "URL contains suspicious keyword: 'crypto'",
+      "evidence": "https://web.archive.org/web/20210321122517/https://fortune.com/2018/05/31/cryptocurrency-eos-ico-scam/"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Fishing",
+      "line": 1124,
+      "description": "URL contains suspicious keyword: 'gift'",
+      "evidence": "https://www.ggift.co.uk/wp-content/uploads/2019/02/English-Heritage-Grimsby-Fish-Docks-.pdf"
+    },
+    {
+      "type": "Suspicious Link Keyword",
+      "severity": "medium",
+      "file": "https://en.wikipedia.org/wiki/Fishing",
+      "line": 1124,
+      "description": "URL contains suspicious keyword: 'gift'",
+      "evidence": "https://web.archive.org/web/20260321110932/https://www.ggift.co.uk/wp-content/uploads/2019/02/English-Heritage-Grimsby-Fish-Docks-.pdf"
+    }
+  ],
+  "crawl_errors": [],
+  "files": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022",
+      "type": "text/javascript; charset=utf-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phishing#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Main_Page",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Main_Page#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Main_Page#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Main_Page#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Main_Page#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contents",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contents#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Portal:Current_events#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Random",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Random#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Random#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Random#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Random#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:About",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:About#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Contents",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Contents#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Contents#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Contents#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Introduction",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Introduction#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Introduction#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Help:Introduction#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChanges#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:SpecialPages",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:SpecialPages#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Search",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Search#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Search#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:Search#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&safemode=1&skin=vector-2022",
+      "type": "text/javascript; charset=utf-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Talk:Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Talk:Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Talk:Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Talk:Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=edit",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=edit#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=edit#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=edit#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=history",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=history#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=history#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=history#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:WhatLinksHere/Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:WhatLinksHere/Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:WhatLinksHere/Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:WhatLinksHere/Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Phishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Phishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Phishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Phishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&oldid=1350699898#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=info",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=info#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=info#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&action=info#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Phishing&id=1350699898&wpFormIdentifier=titleform",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Phishing&id=1350699898&wpFormIdentifier=titleform#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Phishing&id=1350699898&wpFormIdentifier=titleform#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&page=Phishing&id=1350699898&wpFormIdentifier=titleform#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPhishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPhishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPhishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPhishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Phishing&action=show-download-screen",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Phishing&action=show-download-screen#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Phishing&action=show-download-screen#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Phishing&action=show-download-screen#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&printable=1&raw=1&skin=vector-2022",
+      "type": "text/javascript; charset=utf-8",
+      "source": "external_script"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=Phishing&printable=yes#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fishing",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fishing#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fishing#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fishing#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fishing#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pish",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pish#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pish#inline-script-2",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pish#inline-script-3",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pish#inline-script-4",
+      "type": "text/javascript",
+      "source": "inline"
+    }
+  ]
+}

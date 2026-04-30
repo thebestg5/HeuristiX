@@ -1,0 +1,54 @@
+{
+  "base_url": "https://httpbin.org",
+  "pages_scanned": 2,
+  "files_scanned": 6,
+  "scripts_scanned": 4,
+  "links_checked": 5,
+  "threats_found": 0,
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "threat_types": {},
+  "threats": [],
+  "crawl_errors": [
+    {
+      "url": "mailto:me@kennethreitz.org",
+      "error": "Request error: No connection adapters were found for 'mailto:me@kennethreitz.org'"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://httpbin.org",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/swagger-ui-bundle.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org/flasgger_static/lib/jquery.min.js",
+      "type": "application/javascript",
+      "source": "external_script"
+    },
+    {
+      "url": "https://httpbin.org#inline-script-1",
+      "type": "text/javascript",
+      "source": "inline"
+    },
+    {
+      "url": "https://httpbin.org/forms/post",
+      "type": "text/html; charset=utf-8",
+      "source": "page"
+    }
+  ]
+}

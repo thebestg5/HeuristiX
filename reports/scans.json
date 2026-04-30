@@ -1,0 +1,55 @@
+{
+  "d6ceb34c-b032-4d5b-8862-85731723b4a9": {
+    "id": "d6ceb34c-b032-4d5b-8862-85731723b4a9",
+    "url": "https://www.patreon.com/posts/primes-hd-beta-145471037",
+    "max_pages": 30,
+    "max_depth": 2,
+    "stealth_mode": false,
+    "status": "completed",
+    "started_at": "2026-04-26T22:22:50.655519",
+    "result": {
+      "base_url": "https://www.patreon.com/posts/primes-hd-beta-145471037",
+      "pages_scanned": 1,
+      "files_scanned": 2,
+      "scripts_scanned": 1,
+      "links_checked": 0,
+      "threats_found": 0,
+      "severity_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "threat_types": {},
+      "threats": [],
+      "crawl_errors": [],
+      "files": [
+        {
+          "url": "https://www.patreon.com/posts/primes-hd-beta-145471037",
+          "type": "text/html; charset=utf-8",
+          "source": "page"
+        },
+        {
+          "url": "https://www.patreon.com/posts/primes-hd-beta-145471037#inline-script-1",
+          "type": "text/javascript",
+          "source": "inline"
+        }
+      ],
+      "all_links": [],
+      "risk_score": {
+        "score": 100,
+        "verdict": "Safe",
+        "breakdown": {},
+        "max_score": 100,
+        "confidence": {
+          "score": 0,
+          "label": "No behavioral flags detected",
+          "behavioral_flags_triggered": 0
+        }
+      }
+    },
+    "completed_at": "2026-04-26T22:22:51.275909",
+    "json_report": "C:\\Users\\Usuario\\Desktop\\Index Scanner\\reports\\HX_Scan_patreon_com_20260426_222251.json",
+    "html_report": "C:\\Users\\Usuario\\Desktop\\Index Scanner\\reports\\HX_Scan_patreon_com_20260426_222251.html"
+  }
+}
