@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeuristiX Scanner</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #161922;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --critical: #ef4444;
+      --high: #f97316;
+      --medium: #eab308;
+      --low: #22c55e;
+      --border: #1f2937;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      width: 400px;
+      min-height: 300px;
+    }
+    
+    .header {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+    }
+    
+    .title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .content {
+      padding: 1rem;
+    }
+    
+    .url-display {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      word-break: break-all;
+      color: var(--muted);
+    }
+    
+    .status {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .status.loading {
+      color: var(--accent);
+    }
+    
+    .status.error {
+      color: var(--critical);
+    }
+    
+    .status-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .status-text {
+      font-size: 0.9rem;
+    }
+    
+    .result {
+      display: none;
+    }
+    
+    .result.show {
+      display: block;
+    }
+    
+    .score-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .score {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    
+    .score.safe { color: var(--low); }
+    .score.moderate { color: var(--medium); }
+    .score.dangerous { color: var(--critical); }
+    
+    .verdict {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+    
+    .verdict.safe { color: var(--low); }
+    .verdict.moderate { color: var(--medium); }
+    .verdict.dangerous { color: var(--critical); }
+    
+    .confidence {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    
+    .threats {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+    
+    .threats-header {
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.03);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    
+    .threat-item {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    
+    .threat-item:last-child {
+      border-bottom: none;
+    }
+    
+    .threat-severity {
+      display: inline-block;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    
+    .threat-severity.critical { background: var(--critical); color: white; }
+    .threat-severity.high { background: var(--high); color: white; }
+    .threat-severity.medium { background: var(--medium); color: black; }
+    .threat-severity.low { background: var(--low); color: white; }
+    
+    .threat-type {
+      font-weight: 600;
+    }
+    
+    .threat-desc {
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    
+    .scan-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    
+    .scan-btn:hover {
+      opacity: 0.9;
+    }
+    
+    .scan-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .no-threats {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--low);
+    }
+    
+    .footer {
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    
+    .connection-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--critical);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    
+    .connection-error strong {
+      color: var(--critical);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">🛡️</span>
+    <span class="title">HeuristiX</span>
+  </div>
+  
+  <div class="content">
+    <div class="url-display" id="currentUrl">Loading current URL...</div>
+    
+    <div id="status" class="status">
+      <div class="status-icon">🔍</div>
+      <div class="status-text">Click "Scan Site" to check this page</div>
+    </div>
+    
+    <div id="result" class="result">
+      <div class="score-card">
+        <div class="score" id="score">--</div>
+        <div class="verdict" id="verdict">--</div>
+        <div class="confidence" id="confidence">--</div>
+      </div>
+      
+      <div class="threats">
+        <div class="threats-header">Threats Found</div>
+        <div id="threatsList">
+          <div class="no-threats">✓ No threats detected</div>
+        </div>
+      </div>
+      
+      <button class="scan-btn" id="exportBtn" style="margin-top: 0.5rem; background: var(--medium);">Export Results (JSON)</button>
+      <button class="scan-btn" id="blockSiteBtn" style="margin-top: 0.5rem; background: var(--critical); display: none;">Block This Site</button>
+    </div>
+    
+    <button class="scan-btn" id="scanBtn">Scan Site</button>
+    
+    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem;">
+      <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); cursor: pointer;">
+        <input type="checkbox" id="autoScanToggle" style="width: 16px; height: 16px; cursor: pointer;">
+        Auto-scan on page load
+      </label>
+      <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); cursor: pointer; margin-top: 0.5rem;">
+        <input type="checkbox" id="blockDangerousToggle" style="width: 16px; height: 16px; cursor: pointer;">
+        Block dangerous sites (score ≤ 50)
+      </label>
+    </div>
+    
+    <div style="margin-top: 1rem;">
+      <div style="font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Recent Scans</div>
+      <div id="scanHistory" style="max-height: 150px; overflow-y: auto; background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="no-threats" style="padding: 1rem; font-size: 0.8rem;">No scan history</div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem;">
+      <div style="font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">📁 Scan File</div>
+      <input type="file" id="fileInput" accept=".js,.html,.htm,.txt,.json,.xml,.py,.php,.rb,.go,.java,.cpp,.c,.h,.css,.svg" style="width: 100%; font-size: 0.8rem; background: var(--bg); border: 1px solid var(--border); border-radius: 0.5rem; padding: 0.5rem; color: var(--text);">
+      <button id="scanFileBtn" style="width: 100%; margin-top: 0.5rem; padding: 0.5rem; background: var(--accent); color: var(--bg); border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem;">Scan File</button>
+      <div id="fileResult" style="margin-top: 0.5rem; display: none;"></div>
+    </div>
+    
+    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem;">
+      <div style="font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">🎓 Phishing Training</div>
+      <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;">Test your ability to spot phishing sites</div>
+      <button id="startQuizBtn" style="width: 100%; padding: 0.5rem; background: var(--accent2); color: #fff; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; font-size: 0.85rem;">Start Quiz</button>
+      <div id="quizArea" style="margin-top: 0.5rem; display: none;"></div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    Powered by HeuristiX Security Scanner
+  </div>
+  
+  <script src="scanner.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
